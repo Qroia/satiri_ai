@@ -1,0 +1,14 @@
+version: '3'
+services:
+  discord-bot:
+    build: .
+    restart: always
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MONGODB_URI=${MONGODB_URI}
+      - MONGODB_DB_NAME=${MONGODB_DB_NAME}
+      - PROXY_URL=${PROXY_URL}
